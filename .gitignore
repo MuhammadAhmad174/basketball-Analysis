@@ -32,10 +32,25 @@ ENV/
 *.swo
 *~
 
-# Models
+# Models (too large for GitHub)
 models/*.pt
 models/*.pth
 models/*.onnx
+models/*.pkl
+*.weights
+
+# API Keys and Secrets
+.env
+.env.local
+*.key
+*_key.txt
+*_token.txt
+secrets.json
+config_private.py
+roboflow_config.py
+
+# Jupyter Notebooks with API keys
+training_notebooks/*.ipynb
 
 # Output
 output_videos/*.avi
@@ -50,7 +65,6 @@ stubs/*.pkl
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb
 
 # OS
 .DS_Store
@@ -58,3 +72,14 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Large video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Temporary files
+*.tmp
+*.temp
+~*
