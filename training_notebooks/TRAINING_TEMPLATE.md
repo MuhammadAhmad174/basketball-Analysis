@@ -1,10 +1,6 @@
 # Training Notebook Template
 
-## Safe API Key Usage
-
-Instead of hardcoding API keys in notebooks, use this pattern:
-
-### Method 1: Config File (Recommended)
+### Method 1: Config File
 
 Create `roboflow_config.py`:
 ```python
@@ -85,34 +81,4 @@ model.export(format='pt')
 - [ ] Document any dataset requirements
 - [ ] Include training results/metrics
 
-## 🔒 Security Best Practices
 
-1. **Never hardcode secrets:**
-   ```python
-   # ❌ BAD
-   api_key = "abc123xyz"
-   
-   # ✅ GOOD
-   from roboflow_config import ROBOFLOW_API_KEY
-   ```
-
-2. **Check before committing:**
-   ```bash
-   # Search for potential API keys
-   git diff | grep -i "api_key"
-   ```
-
-3. **Use .gitignore:**
-   - `roboflow_config.py`
-   - `.env`
-   - `secrets.json`
-
-4. **Rotate keys if exposed:**
-   - If you accidentally commit a key, rotate it immediately
-   - Don't just delete the commit - the key is still in history
-
-## 📚 Additional Resources
-
-- [Roboflow API Documentation](https://docs.roboflow.com/api-reference/authentication)
-- [Managing Secrets in Jupyter](https://jupyter-notebook.readthedocs.io/en/stable/security.html)
-- [Git Security Best Practices](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure)
